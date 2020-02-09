@@ -8,60 +8,41 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Constants;
 import frc.robot.RobotContainer;
-import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Feeder;
 
-import edu.wpi.first.wpilibj.Joystick;
-
-
-
-public class ArcadeDrive extends CommandBase 
-{
+public class FeedBackward extends CommandBase {
   /**
-   * Creates a new ArcadeDrive.
+   * Creates a new FeedBackward.
    */
 
+  private final Feeder __m_Feeder;
 
-  private final Drivetrain __Drivetrain;
-  private final Joystick __Joystick;
-
-  public ArcadeDrive() 
-  {
+  public FeedBackward() {
     // Use addRequirements() here to declare subsystem dependencies.
-
-    __Drivetrain = RobotContainer.m_DriveTrain;
-    __Joystick = RobotContainer.m_joystick;
-
-    addRequirements(__Drivetrain);
+    __m_Feeder = RobotContainer.m_Feeder;
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() 
-  {
-
+  public void initialize() {
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() 
-  {
-    __Drivetrain.DT_ArcadeDrive(__Joystick.getRawAxis(Constants.CB_DRIVE_DRIVEFORWARD_AXIS),
-                                __Joystick.getRawAxis(Constants.CB_DRIVE_TURN_AXIS));
+  public void execute() {
+    __m_Feeder.ArcadeDrive(-1);
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) 
-  {
-
+  public void end(boolean interrupted) {
+    __m_Feeder.Stop();
   }
 
   // Returns true when the command should end.
   @Override
-  public boolean isFinished() 
-  {
+  public boolean isFinished() {
     return false;
   }
 }

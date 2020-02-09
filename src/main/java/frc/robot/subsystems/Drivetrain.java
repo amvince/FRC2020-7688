@@ -36,13 +36,13 @@ public class Drivetrain extends SubsystemBase
 
   public Drivetrain() 
   {
-    l_b_Speedcontroller = new WPI_VictorSPX(Constants.DT_MOTOR_L_B_Port);
-    l_f_SpeedController = new WPI_VictorSPX(Constants.DT_MOTOR_L_F_Port);
+    l_b_Speedcontroller = new WPI_VictorSPX(Constants.DT_MOTOR_L_B_PORT);
+    l_f_SpeedController = new WPI_VictorSPX(Constants.DT_MOTOR_L_F_PORT);
     l_ControllerGroup = new SpeedControllerGroup(l_b_Speedcontroller, l_f_SpeedController);
 
 
-    r_b_SpeedController = new WPI_VictorSPX(Constants.DT_MOTOR_R_B_Port);
-    r_f_SpeedController = new WPI_VictorSPX(Constants.DT_MOTOR_R_F_Port);
+    r_b_SpeedController = new WPI_VictorSPX(Constants.DT_MOTOR_R_B_PORT);
+    r_f_SpeedController = new WPI_VictorSPX(Constants.DT_MOTOR_R_F_PORT);
     r_ControllerGroup = new SpeedControllerGroup(r_b_SpeedController, r_f_SpeedController);
 
     m_Drive = new DifferentialDrive(l_ControllerGroup, r_ControllerGroup);

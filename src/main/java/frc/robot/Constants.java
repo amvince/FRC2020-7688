@@ -17,14 +17,31 @@ package frc.robot;
  */
 public final class Constants 
 {
-    //Drivetrain
-        public static final int DT_MOTOR_L_B_Port = 1;
-        public static final int DT_MOTOR_L_F_Port = 2;
-        public static final int DT_MOTOR_R_B_Port = 3;
-        public static final int DT_MOTOR_R_F_Port = 4;
+    //Command Bindings
+        //Drive
+            public static final int CB_DRIVE_DRIVEFORWARD_AXIS = 1;
+            public static final int CB_DRIVE_TURN_AXIS = 0;
+       
+        //Feeder
+            public static final int CB_FEEDER_FEEDFORWARD_BUTTON = 3;
+            public static final int CB_FEEDER_FEEDBACKWARD_BUTTON = 4;
 
-        public static final double DT_SPEED_MULTIPLIER = 0.5;
-        public static final double DT_ROTATION_MULTIPLIER = 0.5;
 
+    //Subsystem Constants
+        //OI
+            public static final int JS_JOYSTICK_1_PORT = 0;
+
+        //Drivetrain
+            public static final int DT_MOTOR_L_B_PORT = 1;
+            public static final int DT_MOTOR_L_F_PORT = 2;
+            public static final int DT_MOTOR_R_B_PORT = 3;
+            public static final int DT_MOTOR_R_F_PORT = 4;
+
+            public static final double DT_SPEED_MULTIPLIER = .5;
+            public static final double DT_ROTATION_MULTIPLIER = .5;
+
+
+        //Feeder
+            public static final double FD_SPEED_MULTIPLIER = .3;
         
 }

@@ -12,9 +12,12 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.FeedForward;
+import frc.robot.commands.FeedBackward;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Feeder;
 import edu.wpi.first.wpilibj2.command.Command;
-
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.Drivetrain;
 
 /**
@@ -27,12 +30,18 @@ public class RobotContainer
 {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
-  public static final Drivetrain m_DriveTrain = new Drivetrain();
+  //subsystems
+    public static final Drivetrain m_DriveTrain = new Drivetrain();
+    public static final Feeder m_Feeder = new Feeder();
 
-  public static final Joystick m_joystick = new Joystick(0);
+  //OI
+    public static final Joystick m_joystick = new Joystick(Constants.JS_JOYSTICK_1_PORT);
+
+    private static final JoystickButton button_feedforward = new JoystickButton(m_joystick, Constants.CB_FEEDER_FEEDFORWARD_BUTTON);
+    private static final JoystickButton button_feedbackward = new JoystickButton(m_joystick, Constants.CB_FEEDER_FEEDBACKWARD_BUTTON);
+
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -41,8 +50,7 @@ public class RobotContainer
   {
     // Configure the button bindings
     configureButtonBindings();
-
-
+    
     m_DriveTrain.setDefaultCommand(new ArcadeDrive());
   }
 
@@ -54,6 +62,8 @@ public class RobotContainer
    */
   private void configureButtonBindings() 
   {
+    button_feedforward.whileHeld(new FeedForward());
+    button_feedbackward.whileHeld(new FeedBackward());
   }
 
 
