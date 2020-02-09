@@ -27,6 +27,11 @@ public final class Constants
             public static final int CB_FEEDER_FEEDBACKWARD_BUTTON = 4;
 
 
+
+
+
+            
+
     //Subsystem Constants
         //OI
             public static final int JS_JOYSTICK_1_PORT = 0;
@@ -42,6 +47,9 @@ public final class Constants
 
 
         //Feeder
+            public static final int FD_MOTOR_1_PORT = 5;
+            public static final int FD_MOTOR_2_PORT = 6;
+
             public static final double FD_SPEED_MULTIPLIER = .3;
         
 }

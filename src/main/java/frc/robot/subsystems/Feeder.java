@@ -22,8 +22,8 @@ public class Feeder extends SubsystemBase {
 
   public Feeder() 
   {
-    m1_Talon = new WPI_TalonSRX(5);
-    m2_Talon = new WPI_TalonSRX(6);
+    m1_Talon = new WPI_TalonSRX(Constants.FD_MOTOR_1_PORT);
+    m2_Talon = new WPI_TalonSRX(Constants.FD_MOTOR_2_PORT);
 
     m_FeedControl_Motors = new SpeedControllerGroup(m1_Talon, m2_Talon);
   }
