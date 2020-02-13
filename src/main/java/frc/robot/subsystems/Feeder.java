@@ -13,12 +13,16 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
+import frc.robot.subsystems._PneumaticsClass;
+
 public class Feeder extends SubsystemBase {
   
   private final WPI_TalonSRX m1_Talon;
   private final WPI_TalonSRX m2_Talon;
 
   private final SpeedControllerGroup m_FeedControl_Motors;
+
+  private final _PneumaticsClass m_pneumatics = new _PneumaticsClass();
 
   public Feeder() 
   {
@@ -36,6 +40,16 @@ public class Feeder extends SubsystemBase {
   public void Stop()
   {
     m_FeedControl_Motors.set(0);
+  }
+
+  public void RaiseTruck()
+  {
+    m_pneumatics.Arm_Solenoid_Extend();
+  }
+
+  public void LowerTruck()
+  {
+    m_pneumatics.Arm_Solenoid_Retract();
   }
 
 

@@ -22,7 +22,6 @@ public class FeedForward extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
 
     __m_feeder = RobotContainer.m_Feeder;
-
     addRequirements(__m_feeder);
   }
 

@@ -11,39 +11,36 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.Feeder;
 
-public class FeedBackward extends CommandBase {
+public class FeederRaise extends CommandBase {
   /**
-   * Creates a new FeedBackward.
+   * Creates a new FeederRaise.
    */
-
-  private final Feeder __m_Feeder;
-
-  public FeedBackward() {
+  private final Feeder __m_feeder;
+  public FeederRaise() {
     // Use addRequirements() here to declare subsystem dependencies.
-    __m_Feeder = RobotContainer.m_Feeder;
-    addRequirements(RobotContainer.m_Feeder);
+    __m_feeder = RobotContainer.m_Feeder;
+    addRequirements(__m_feeder);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    __m_feeder.RaiseTruck();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    __m_Feeder.ArcadeDrive(-1);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    __m_Feeder.Stop();
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return true;
   }
 }

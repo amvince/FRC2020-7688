@@ -13,12 +13,14 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.FeedForward;
+import frc.robot.commands.FeederRaise;
 import frc.robot.commands.FeedBackward;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Feeder;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.commands.FeederLower;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -42,6 +44,9 @@ public class RobotContainer
     private static final JoystickButton button_feedforward = new JoystickButton(m_joystick, Constants.CB_FEEDER_FEEDFORWARD_BUTTON);
     private static final JoystickButton button_feedbackward = new JoystickButton(m_joystick, Constants.CB_FEEDER_FEEDBACKWARD_BUTTON);
 
+    private static final JoystickButton button_feedraise = new JoystickButton(m_joystick, Constants.CB_FEEDER_FEEDRAISE_BUTTON);
+    private static final JoystickButton button_feedlower = new JoystickButton(m_joystick, Constants.CB_FEEDER_FEEDLOWER_BUTTON);
+
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -64,6 +69,9 @@ public class RobotContainer
   {
     button_feedforward.whileHeld(new FeedForward());
     button_feedbackward.whileHeld(new FeedBackward());
+
+    button_feedraise.whenPressed(new FeederRaise());
+    button_feedlower.whenPressed(new FeederLower());
   }
 
 

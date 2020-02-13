@@ -26,9 +26,9 @@ public final class Constants
             public static final int CB_FEEDER_FEEDFORWARD_BUTTON = 3;
             public static final int CB_FEEDER_FEEDBACKWARD_BUTTON = 4;
 
-
-
-
+            public static final int CB_FEEDER_FEEDRAISE_BUTTON = 6;
+            public static final int CB_FEEDER_FEEDLOWER_BUTTON = 5;
+            
 
             
 
@@ -52,4 +52,13 @@ public final class Constants
 
             public static final double FD_SPEED_MULTIPLIER = .3;
         
+
+        //Pneumatics
+            public static final int PN_COMPRESSOR_PORT = 0;
+
+            public static final int PN_FEEDER_DOUBLESOLENOID_F = 0;
+            public static final int PN_FEEDER_DOUBLESOLENOID_B = 1;
+
+
+
 }
