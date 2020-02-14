@@ -17,6 +17,7 @@ import frc.robot.commands.FeederRaise;
 import frc.robot.commands.FeedBackward;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Feeder;
+import frc.robot.subsystems.Sensors;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.Drivetrain;
@@ -28,7 +29,7 @@ import frc.robot.commands.FeederLower;
  * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
  * (including subsystems, commands, and button mappings) should be declared here.
  */
-public class RobotContainer 
+public class RobotContainer
 {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
@@ -37,6 +38,7 @@ public class RobotContainer
   //subsystems
     public static final Drivetrain m_DriveTrain = new Drivetrain();
     public static final Feeder m_Feeder = new Feeder();
+    public static Sensors m_sensors = new Sensors();
 
   //OI
     public static final Joystick m_joystick = new Joystick(Constants.JS_JOYSTICK_1_PORT);
@@ -51,11 +53,11 @@ public class RobotContainer
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
-  public RobotContainer() 
+  public RobotContainer()
   {
     // Configure the button bindings
     configureButtonBindings();
-    
+
     m_DriveTrain.setDefaultCommand(new ArcadeDrive());
   }
 
@@ -65,7 +67,7 @@ public class RobotContainer
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() 
+  private void configureButtonBindings()
   {
     button_feedforward.whileHeld(new FeedForward());
     button_feedbackward.whileHeld(new FeedBackward());
@@ -80,7 +82,7 @@ public class RobotContainer
    *
    * @return the command to run in autonomous
    */
-  public Command getAutonomousCommand() 
+  public Command getAutonomousCommand()
   {
     // An ExampleCommand will run in autonomous
     return m_autoCommand;
