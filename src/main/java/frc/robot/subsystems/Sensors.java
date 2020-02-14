@@ -11,35 +11,24 @@ import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.kauailabs.navx.frc.AHRS;
 
-public class Gyro extends SubsystemBase {
+
+public class Sensors extends SubsystemBase {
   /**
-   * Creates a new Gyro.
+   * Creates a new Sensors.
    */
-  private static AHRS m_ahrs = new AHRS(I2C.Port.kOnboard);
 
-  public float pitch = m_ahrs.getPitch();
-  public float roll = m_ahrs.getRoll();
-  public float yaw = m_ahrs.getYaw();
-  public double angle = m_ahrs.getAngle();
+   //Gyro
+   private static AHRS m_ahrs = new AHRS(I2C.Port.kOnboard);
 
-  public Gyro() {
+
+  public Sensors() {
 
   }
 
-  public void Update() {
-    pitch = m_ahrs.getPitch();
-    roll = m_ahrs.getRoll();
-    yaw = m_ahrs.getYaw();
-    angle = m_ahrs.getAngle() % 360;
+  //Gyro methods
+  public float returnYaw() {
+    return m_ahrs.getYaw();
   }
-
-  public void Print() {
-    System.out.println("Pitch: " + pitch);
-    System.out.println("Roll: " + roll);
-    System.out.println("Yaw: " + yaw);
-    System.out.println("Angle: " + angle);
-  }
-
   public void resetYaw() {
     m_ahrs.reset();
   }

@@ -48,8 +48,6 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
 
-    m_robotContainer.m_gyro.Update();
-    m_robotContainer.m_gyro.Print();
   }
 
   /**
@@ -93,7 +91,6 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
 
-    m_robotContainer.m_gyro.resetYaw();
   }
 
   /**

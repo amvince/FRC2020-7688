@@ -17,7 +17,7 @@ import frc.robot.commands.FeederRaise;
 import frc.robot.commands.FeedBackward;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Feeder;
-import frc.robot.subsystems.Gyro;
+import frc.robot.subsystems.Sensors;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.Drivetrain;
@@ -38,7 +38,7 @@ public class RobotContainer
   //subsystems
     public static final Drivetrain m_DriveTrain = new Drivetrain();
     public static final Feeder m_Feeder = new Feeder();
-    public static Gyro m_gyro = new Gyro();
+    public static Sensors m_sensors = new Sensors();
 
   //OI
     public static final Joystick m_joystick = new Joystick(Constants.JS_JOYSTICK_1_PORT);
