@@ -29,12 +29,12 @@ public class _PneumaticsClass extends SubsystemBase {
 
   public static void Arm_Solenoid_Extend()
   {
-    m_feeder_double_solenoid.set(DoubleSolenoid.Value.kForward);
+    m_feeder_double_solenoid.set(DoubleSolenoid.Value.kReverse);
   }
 
   public static void Arm_Solenoid_Retract()
   {
-    m_feeder_double_solenoid.set(DoubleSolenoid.Value.kReverse);
+    m_feeder_double_solenoid.set(DoubleSolenoid.Value.kForward);
   }
 
 
