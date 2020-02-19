@@ -51,7 +51,7 @@ public class Drivetrain extends SubsystemBase
 
   public void DT_ArcadeDrive(double i_Speed, double i_Rotation)
   {
-    m_Drive.arcadeDrive(i_Speed * Constants.DT_SPEED_MULTIPLIER,
+    m_Drive.arcadeDrive(i_Speed * Constants.DT_SPEED_MULTIPLIER * -1, // * -1 because Y Axis is inverted by default
                         i_Rotation * Constants.DT_ROTATION_MULTIPLIER);
   }
 

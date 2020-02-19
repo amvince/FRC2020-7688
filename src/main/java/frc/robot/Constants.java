@@ -22,10 +22,10 @@ public final class Constants
             public static final int CB_DRIVE_DRIVEFORWARD_AXIS = 1;
             public static final int CB_DRIVE_TURN_AXIS = 0;
        
-        //Feeder
+        //Feeder  
             public static final int CB_FEEDER_FEEDFORWARD_BUTTON = 3;
             public static final int CB_FEEDER_FEEDBACKWARD_BUTTON = 4;
-
+ 
             public static final int CB_FEEDER_FEEDRAISE_BUTTON = 6;
             public static final int CB_FEEDER_FEEDLOWER_BUTTON = 5;
             

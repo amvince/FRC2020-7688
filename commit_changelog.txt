@@ -1,0 +1,7 @@
+Control, Feeder
+
+Control:
+    - Fixed reversed axes for Y Control
+
+Feeder:
+    - Changed motors from Talons to Victors to reflect hardware changes
