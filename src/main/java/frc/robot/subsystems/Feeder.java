@@ -10,7 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -19,8 +19,8 @@ import frc.robot.subsystems._PneumaticsClass;
 
 public class Feeder extends SubsystemBase {
   
-  private final WPI_TalonSRX m1_Talon;
-  private final WPI_TalonSRX m2_Talon;
+  private final WPI_VictorSPX m1_Talon;
+  private final WPI_VictorSPX m2_Talon;
 
   private final SpeedControllerGroup m_FeedControl_Motors;
 
@@ -31,8 +31,8 @@ public class Feeder extends SubsystemBase {
 
   public Feeder() 
   {
-    m1_Talon = new WPI_TalonSRX(Constants.FD_MOTOR_1_PORT);
-    m2_Talon = new WPI_TalonSRX(Constants.FD_MOTOR_2_PORT);
+    m1_Talon = new WPI_VictorSPX(Constants.FD_MOTOR_1_PORT);
+    m2_Talon = new WPI_VictorSPX(Constants.FD_MOTOR_2_PORT);
 
     m_FeedControl_Motors = new SpeedControllerGroup(m1_Talon, m2_Talon);
   }
