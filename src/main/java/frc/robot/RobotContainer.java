@@ -14,10 +14,14 @@ import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.FeedForward;
 import frc.robot.commands.FeederRaise;
+import frc.robot.commands.spinDeploy;
+import frc.robot.commands.spinFunction;
+import frc.robot.commands.spinRetract;
 import frc.robot.commands.FeedBackward;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Feeder;
 import frc.robot.subsystems.Sensors;
+import frc.robot.subsystems.colourWheel;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.Drivetrain;
@@ -38,6 +42,7 @@ public class RobotContainer
   //subsystems
     public static final Drivetrain m_DriveTrain = new Drivetrain();
     public static final Feeder m_Feeder = new Feeder();
+    public static final colourWheel m_wheel = new colourWheel();
     public static Sensors m_sensors = new Sensors();
 
   //OI
@@ -49,7 +54,9 @@ public class RobotContainer
     private static final JoystickButton button_feedraise = new JoystickButton(m_joystick, Constants.CB_FEEDER_FEEDRAISE_BUTTON);
     private static final JoystickButton button_feedlower = new JoystickButton(m_joystick, Constants.CB_FEEDER_FEEDLOWER_BUTTON);
 
-
+    private static final JoystickButton button_wheelSpinner = new JoystickButton(m_joystick, Constants.CW_SPINNER_BUTTON);
+    private static final JoystickButton button_wheelDeploy = new JoystickButton(m_joystick, Constants.CW_DEPLOY_BUTTON);
+    private static final JoystickButton button_wheelRetract = new JoystickButton(m_joystick, Constants.CW_RETRACT_BUTTON);
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -74,6 +81,10 @@ public class RobotContainer
 
     button_feedraise.whenPressed(new FeederRaise());
     button_feedlower.whenPressed(new FeederLower());
+
+    button_wheelSpinner.whenPressed(new spinFunction(m_wheel));
+    button_wheelDeploy.whenPressed(new spinDeploy(m_wheel));
+    button_wheelRetract.whenPressed(new spinRetract(m_wheel));
   }
 
 

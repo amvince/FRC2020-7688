@@ -18,21 +18,18 @@ public class _PneumaticsClass extends SubsystemBase {
    */
 
   private static Compressor m_compressor = new Compressor(Constants.PN_COMPRESSOR_PORT);
-
   private static DoubleSolenoid m_feeder_double_solenoid = new DoubleSolenoid(Constants.PN_FEEDER_DOUBLESOLENOID_F, Constants.PN_FEEDER_DOUBLESOLENOID_B);
-
 
   public _PneumaticsClass() {
 
   }
 
-
-  public static void Arm_Solenoid_Extend()
+  public void Arm_Solenoid_Extend()
   {
     m_feeder_double_solenoid.set(DoubleSolenoid.Value.kReverse);
   }
 
-  public static void Arm_Solenoid_Retract()
+  public void Arm_Solenoid_Retract()
   {
     m_feeder_double_solenoid.set(DoubleSolenoid.Value.kForward);
   }
