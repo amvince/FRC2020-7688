@@ -120,8 +120,6 @@ ui.dumpToggle.onclick = function() {
 }
 
 NetworkTables.addKeyListener('/SmartDashboard/dumpTruck', (key, value) => {
-	if(value=="true")  {value=true;}
-	else if (value = "false") value = false;
 	if (value) {
 		ui.dump.style.transform = "rotate(0deg)";
 	} else {
