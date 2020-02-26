@@ -7,7 +7,6 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 // import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.colourWheel;
@@ -39,6 +38,7 @@ public class spinCounter extends CommandBase {
     counter = 0;
     s_initColour = m_wheel.colourMatch();
     s_prevColour = s_initColour;
+    System.out.println("Initializing Counter");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -56,9 +56,11 @@ public class spinCounter extends CommandBase {
     }
       s_prevColour = currColour;
     
-    SmartDashboard.putString("Detected Color", currColour);
-    SmartDashboard.putNumber("Spins", counter);
-  }
+  //  SmartDashboard.putString("Detected Color", currColour);
+  //  SmartDashboard.putNumber("Spins", counter);
+  System.out.println("Detected Colour "+currColour);  
+  System.out.println("Spins "+counter);
+}
 
   // Called once the command ends or is interrupted.
   @Override

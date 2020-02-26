@@ -16,7 +16,6 @@ import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.I2C;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -25,7 +24,7 @@ public class colourWheel extends SubsystemBase {
   /**
    * Creates a new colourWheel.
    */
-  private final WPI_TalonSRX wheel = new WPI_TalonSRX(COnstants.CW_WHEEL);
+  private final WPI_TalonSRX wheel = new WPI_TalonSRX(Constants.CW_WHEEL);
   // private final Talon wheel = new Talon(Constants.CW_WHEEL);
   private final DoubleSolenoid ds = new DoubleSolenoid(Constants.PN_COLOURWHEEL_DOUBlESOLENOID_F,
       Constants.PN_COLOURWHEEL_DOUBLESOLENOID_R);
@@ -52,7 +51,7 @@ public class colourWheel extends SubsystemBase {
   }
 
   public void clockwise() {
-    wheel.set(0.3);
+    wheel.set(0.2);
     motorState = "Clockwise";
   }
 
@@ -77,6 +76,9 @@ public class colourWheel extends SubsystemBase {
     ds.set(DoubleSolenoid.Value.kReverse);
   }
 
+  public void off() {
+    ds.set(DoubleSolenoid.Value.kOff);
+  }
   public double confidence() {
     final ColorMatchResult match = m_colorMatcher.matchClosestColor(detectedColor);
     return match.confidence;

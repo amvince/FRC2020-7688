@@ -14,7 +14,7 @@ public class spinDeploy extends CommandBase {
   /**
    * Creates a new spinDeploy.
    */
-  private static colourWheel m_wheel;
+  private final colourWheel m_wheel;
 
   public spinDeploy(colourWheel wheel) {
     // Use addRequirements() here to declare subsystem dependencies.

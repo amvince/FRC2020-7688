@@ -31,23 +31,29 @@ public class spinFunction extends CommandBase {
   public void initialize() {
     // Read network table for wheel
     // conditional command based on network table command.
-    String cmd = table.getEntry("wheel_function").getString("spin");
+    String cmd = table.getEntry("wheel_function").getString("default");
+    //String cmd = SmartDashboard.getString("wheel_function","spin");
+  
+    System.out.println(table.getKeys());
+    System.out.println(table.getEntry("wheel_function"));
+    System.out.println(cmd);
     switch(cmd) {
       case "red":
-        new FindColour(this.m_wheel, "red");
+        new FindColour(m_wheel, "Red").schedule();
         break;
       case "blue":
-        new FindColour(this.m_wheel, "blue");
+        new FindColour(m_wheel, "Blue").schedule();
         break;
       case "green":
-        new FindColour(this.m_wheel, "green");
+        new FindColour(m_wheel, "Green").schedule();
         break;
       case "yellow":
-        new FindColour(this.m_wheel, "yellow");
+        new FindColour(m_wheel, "Yellow").schedule();
         break;
       case "spin":
       default:
-        new spinCounter(this.m_wheel);
+        new spinCounter(m_wheel).schedule();
+        System.out.println("Starting Spin");
         break;
     }
 

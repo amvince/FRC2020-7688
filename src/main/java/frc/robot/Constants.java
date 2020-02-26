@@ -68,7 +68,7 @@ public final class Constants
             public static final int PN_COLOURWHEEL_DOUBLESOLENOID_R = 7;
 
         //Colour Wheel    
-            public static final int CW_WHEEL = 8;
+            public static final int CW_WHEEL = 7;
             public static final int CW_SPINNER_BUTTON = 1;
             public static final int CW_DEPLOY_BUTTON = 7;
             public static final int CW_RETRACT_BUTTON = 8;

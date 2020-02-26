@@ -61,6 +61,7 @@ ui.autoSelect.onchange = function() {
 // Colour Wheel Selection Code
 ui.spin.onclick = function() {
 	ui.wheelAction.innerHTML="Spin 3 Times";
+	
 	NetworkTables.putValue('/SmartDashboard/wheel_function', this.value);
 }
 ui.findRed.onclick = function() {
