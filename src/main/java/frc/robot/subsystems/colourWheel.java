@@ -7,6 +7,7 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.revrobotics.ColorMatch;
 import com.revrobotics.ColorMatchResult;
 import com.revrobotics.ColorSensorV3;
@@ -24,7 +25,8 @@ public class colourWheel extends SubsystemBase {
   /**
    * Creates a new colourWheel.
    */
-  private final Talon wheel = new Talon(Constants.CW_WHEEL);
+  private final WPI_TalonSRX wheel = new WPI_TalonSRX(COnstants.CW_WHEEL);
+  // private final Talon wheel = new Talon(Constants.CW_WHEEL);
   private final DoubleSolenoid ds = new DoubleSolenoid(Constants.PN_COLOURWHEEL_DOUBlESOLENOID_F,
       Constants.PN_COLOURWHEEL_DOUBLESOLENOID_R);
   private final I2C.Port i2cPort = I2C.Port.kOnboard;
