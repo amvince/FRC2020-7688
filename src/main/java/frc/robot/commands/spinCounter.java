@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 // import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.subsystems.colourWheel;
 
 public class spinCounter extends CommandBase {
@@ -58,8 +59,8 @@ public class spinCounter extends CommandBase {
     
   //  SmartDashboard.putString("Detected Color", currColour);
   //  SmartDashboard.putNumber("Spins", counter);
-  System.out.println("Detected Colour "+currColour);  
-  System.out.println("Spins "+counter);
+  // System.out.println("Detected Colour "+currColour);  
+  // System.out.println("Spins "+counter);
 }
 
   // Called once the command ends or is interrupted.
@@ -72,6 +73,6 @@ public class spinCounter extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return (counter == 3);
+    return (counter == Constants.CW_SPIN_COUNT);
   }
 }

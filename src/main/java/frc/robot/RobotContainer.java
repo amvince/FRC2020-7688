@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
+import frc.robot.commands.AutonomousForward;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.FeedForward;
 import frc.robot.commands.FeederRaise;
@@ -37,7 +38,9 @@ public class RobotContainer
 {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  // private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+
+  private final AutonomousForward m_autoCommand = new AutonomousForward(m_DriveTrain);
 
   //subsystems
     public static final Drivetrain m_DriveTrain = new Drivetrain();
@@ -45,6 +48,7 @@ public class RobotContainer
     public static final colourWheel m_wheel = new colourWheel();
     public static Sensors m_sensors = new Sensors();
 
+    
   //OI
     public static final Joystick m_joystick = new Joystick(Constants.JS_JOYSTICK_1_PORT);
 

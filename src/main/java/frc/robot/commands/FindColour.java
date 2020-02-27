@@ -7,8 +7,10 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.subsystems.colourWheel;
 
 public class FindColour extends CommandBase {
@@ -65,9 +67,11 @@ public class FindColour extends CommandBase {
   @Override
   public boolean isFinished() {
     if (foundColour && m_wheel.confident()) {
-      m_wheel.stop();
+      //m_wheel.stop();
       System.out.print("Found ");
       System.out.println(s_target);
+      m_wheel.counterClockwise();
+      Timer.delay(Constants.CW_BRAKE_TIME);
       return true;
     }
     return false;

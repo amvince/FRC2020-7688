@@ -48,15 +48,15 @@ public final class Constants
             public static final int DT_MOTOR_R_B_PORT = 3;
             public static final int DT_MOTOR_R_F_PORT = 6;
 
-            public static final double DT_SPEED_MULTIPLIER = .5;
-            public static final double DT_ROTATION_MULTIPLIER = .5;
+            public static final double DT_SPEED_MULTIPLIER = 1;
+            public static final double DT_ROTATION_MULTIPLIER = 1;
 
 
         //Feeder
             public static final int FD_MOTOR_1_PORT = 1;
             public static final int FD_MOTOR_2_PORT = 4;
 
-            public static final double FD_SPEED_MULTIPLIER = .3;
+            public static final double FD_SPEED_MULTIPLIER = .5;
         
 
         //Pneumatics
@@ -67,7 +67,9 @@ public final class Constants
             public static final int PN_COLOURWHEEL_DOUBlESOLENOID_F = 6;
             public static final int PN_COLOURWHEEL_DOUBLESOLENOID_R = 7;
 
-        //Colour Wheel    
+        //Colour Wheel  
+            public static final double CW_SPINNER_SPEED = 0.1;
+            public static final double CW_BRAKE_TIME = 0.5;  
             public static final int CW_WHEEL = 7;
             public static final int CW_SPINNER_BUTTON = 1;
             public static final int CW_DEPLOY_BUTTON = 7;
@@ -76,6 +78,7 @@ public final class Constants
             public static final Color kGREEN = ColorMatch.makeColor(0.197, 0.561, 0.240);
             public static final Color kRED = ColorMatch.makeColor(0.561, 0.232, 0.114);
             public static final Color kYELLOW = ColorMatch.makeColor(0.361, 0.524, 0.113);
+            public static final double CW_SPIN_COUNT=3.5;
             
         //Possible Lifter
             public static final int LI_MOTOR = 7;

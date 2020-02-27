@@ -51,8 +51,11 @@ public class colourWheel extends SubsystemBase {
   }
 
   public void clockwise() {
-    wheel.set(0.2);
+    wheel.set(Constants.CW_SPINNER_SPEED);
     motorState = "Clockwise";
+  }
+  public void counterClockwise() {
+    wheel.set(Constants.CW_SPINNER_SPEED*(-1.5));
   }
 
   @Override
