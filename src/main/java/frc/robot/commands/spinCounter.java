@@ -60,7 +60,7 @@ public class spinCounter extends CommandBase {
   //  SmartDashboard.putString("Detected Color", currColour);
   //  SmartDashboard.putNumber("Spins", counter);
   // System.out.println("Detected Colour "+currColour);  
-  // System.out.println("Spins "+counter);
+  System.out.println("Spins "+counter);
 }
 
   // Called once the command ends or is interrupted.

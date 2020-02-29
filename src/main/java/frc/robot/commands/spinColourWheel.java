@@ -7,50 +7,40 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.colourWheel;
 
-public class AutonomousForward extends CommandBase {
-  private final Drivetrain m_drivetrain;
-  double m_desiredPercentVbus = 0.0;
-	double m_startTime = 0.0;
-	double m_desiredTime;
+public class spinColourWheel extends CommandBase {
   /**
-   * Creates a new AutonomousForward.
+   * Creates a new spinColourWheel.
    */
-  
-  public AutonomousForward(Drivetrain drivetrain) {
+  private static colourWheel m_wheel;
+  public spinColourWheel(colourWheel wheel) {
     // Use addRequirements() here to declare subsystem dependencies.
-    m_desiredTime = 2;
-    m_drivetrain = drivetrain;
-    addRequirements(drivetrain);
+    m_wheel = wheel;
+    addRequirements(wheel);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_startTime = Timer.getFPGATimestamp();
-    System.out.println("Start Time: "+m_startTime);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_drivetrain.DT_ArcadeDrive(-0.5, 0);
+    m_wheel.clockwise();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_drivetrain.DT_Stop();
+    m_wheel.stop();
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    double elapsed_time = Timer.getFPGATimestamp() - m_startTime;
-    System.out.println("Elapsed Time: "+elapsed_time);
-    return (elapsed_time > m_desiredTime);
+    return false;
   }
 }

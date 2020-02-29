@@ -50,9 +50,12 @@ public class colourWheel extends SubsystemBase {
     m_colorMatcher.addColorMatch(kYellowTarget);
   }
 
+  public void clockwise(double speed) {
+    wheel.set(speed);
+    motorState = "Clockwise";
+  }
   public void clockwise() {
     wheel.set(Constants.CW_SPINNER_SPEED);
-    motorState = "Clockwise";
   }
   public void counterClockwise() {
     wheel.set(Constants.CW_SPINNER_SPEED*(-1.5));

@@ -12,14 +12,13 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.AutonomousForward;
-import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.FeedForward;
 import frc.robot.commands.FeederRaise;
+import frc.robot.commands.spinColourWheel;
 import frc.robot.commands.spinDeploy;
 import frc.robot.commands.spinFunction;
 import frc.robot.commands.spinRetract;
 import frc.robot.commands.FeedBackward;
-import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Feeder;
 import frc.robot.subsystems.Sensors;
 import frc.robot.subsystems.colourWheel;
@@ -37,10 +36,9 @@ import frc.robot.commands.FeederLower;
 public class RobotContainer
 {
   // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   // private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
-  private final AutonomousForward m_autoCommand = new AutonomousForward(m_DriveTrain);
+  
 
   //subsystems
     public static final Drivetrain m_DriveTrain = new Drivetrain();
@@ -48,7 +46,7 @@ public class RobotContainer
     public static final colourWheel m_wheel = new colourWheel();
     public static Sensors m_sensors = new Sensors();
 
-    
+    private final AutonomousForward m_autoCommand = new AutonomousForward(m_DriveTrain);
   //OI
     public static final Joystick m_joystick = new Joystick(Constants.JS_JOYSTICK_1_PORT);
 
@@ -61,7 +59,7 @@ public class RobotContainer
     private static final JoystickButton button_wheelSpinner = new JoystickButton(m_joystick, Constants.CW_SPINNER_BUTTON);
     private static final JoystickButton button_wheelDeploy = new JoystickButton(m_joystick, Constants.CW_DEPLOY_BUTTON);
     private static final JoystickButton button_wheelRetract = new JoystickButton(m_joystick, Constants.CW_RETRACT_BUTTON);
-  
+    private static final JoystickButton button_wheelSpin = new JoystickButton(m_joystick, Constants.CW_SPINNER_BUTTON2);
     /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -91,6 +89,7 @@ public class RobotContainer
     button_wheelSpinner.whenPressed(new spinFunction(m_wheel));
     button_wheelDeploy.whenPressed(new spinDeploy(m_wheel));
     button_wheelRetract.whenPressed(new spinRetract(m_wheel));
+    button_wheelSpin.whileHeld(new spinColourWheel(m_wheel));
   }
 
 
