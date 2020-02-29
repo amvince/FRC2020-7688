@@ -7,6 +7,8 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
@@ -23,6 +25,9 @@ public class Feeder extends SubsystemBase {
   private final SpeedControllerGroup m_FeedControl_Motors;
 
   private final _PneumaticsClass m_pneumatics = new _PneumaticsClass();
+
+  private final NetworkTableInstance inst = NetworkTableInstance.getDefault();
+  private final NetworkTable table = inst.getTable("SmartDashboard");
 
   public Feeder() 
   {
@@ -44,11 +49,13 @@ public class Feeder extends SubsystemBase {
 
   public void RaiseTruck()
   {
+    table.getEntry("dumpTruck").setBoolean(true);
     m_pneumatics.Arm_Solenoid_Extend();
   }
 
   public void LowerTruck()
   {
+    table.getEntry("dumpTruck").setBoolean(false);
     m_pneumatics.Arm_Solenoid_Retract();
   }
 
