@@ -71,19 +71,19 @@ public final class Constants
             public static final double CW_SPINNER_SPEED = 0.1;
             public static final double CW_BRAKE_TIME = 0.2;  
             public static final int CW_WHEEL = 7;
-            public static final int CW_SPINNER_BUTTON = 1;
-            public static final int CW_SPINNER_BUTTON2 = 2;
-            public static final int CW_DEPLOY_BUTTON = 7;
+            public static final int CW_SPINNER_BUTTON = 1; //Trigger to command based
+            public static final int CW_SPINNER_BUTTON2 = 2; //Side-Button to just spin it
+            public static final int CW_DEPLOY_BUTTON = 7; // 7 & 8 to deploy and retract. Maybe change to 11 & 12?
             public static final int CW_RETRACT_BUTTON = 8;
-            public static final Color kBLUE = ColorMatch.makeColor(0.143, 0.427, 0.429);
-            public static final Color kGREEN = ColorMatch.makeColor(0.197, 0.561, 0.240);
-            public static final Color kRED = ColorMatch.makeColor(0.561, 0.232, 0.114);
+            public static final Color kBLUE = ColorMatch.makeColor(0.143, 0.427, 0.429); // alter these names to "match" the 90 degree
+            public static final Color kGREEN = ColorMatch.makeColor(0.197, 0.561, 0.240); // offset for the colour wheel spin?
+            public static final Color kRED = ColorMatch.makeColor(0.561, 0.232, 0.114); // Need to sort out which is the "next" colour
             public static final Color kYELLOW = ColorMatch.makeColor(0.361, 0.524, 0.113);
-            public static final double CW_SPIN_COUNT=4;
-            
+            public static final double CW_SPIN_COUNT=4; // Note: This is 0.5 of a spin more than the wheel will spin since it immediately starts counting at 0.5
+                                                        // Set for 3.5 spins so we can be sure we get AT LEAST 3, but less than 5
             
         //Possible Lifter
-            public static final int LI_MOTOR = 7;
+            public static final int LI_MOTOR = 8;
 
 
 }
