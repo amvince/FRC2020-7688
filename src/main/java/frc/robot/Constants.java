@@ -72,9 +72,10 @@ public final class Constants
             public static final double CW_BRAKE_TIME = 0.2;  
             public static final int CW_WHEEL = 7;
             public static final int CW_SPINNER_BUTTON = 1; //Trigger to command based
-            public static final int CW_SPINNER_BUTTON2 = 2; //Side-Button to just spin it
-            public static final int CW_DEPLOY_BUTTON = 7; // 7 & 8 to deploy and retract. Maybe change to 11 & 12?
-            public static final int CW_RETRACT_BUTTON = 8;
+            public static final int CW_SPINNER_FWD = 9; //Just Spin to just spin it
+            public static final int CW_DEPLOY_BUTTON = 8; // 7 & 8 to deploy and retract. Maybe change to 11 & 12?
+            public static final int CW_RETRACT_BUTTON = 7;
+            public static final int CW_SPINNER_REV=10;
 
     // Colours are "swapped" for 90 degree offset. Red<>Blue Green<>Yellow
             public static final Color kRED = ColorMatch.makeColor(0.143, 0.427, 0.429);

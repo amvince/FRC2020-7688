@@ -15,6 +15,7 @@ import frc.robot.commands.AutonomousForward;
 import frc.robot.commands.FeedForward;
 import frc.robot.commands.FeederRaise;
 import frc.robot.commands.spinColourWheel;
+import frc.robot.commands.spinColourWheelRev;
 import frc.robot.commands.spinDeploy;
 import frc.robot.commands.spinFunction;
 import frc.robot.commands.spinRetract;
@@ -59,7 +60,8 @@ public class RobotContainer
     private static final JoystickButton button_wheelSpinner = new JoystickButton(m_joystick, Constants.CW_SPINNER_BUTTON);
     private static final JoystickButton button_wheelDeploy = new JoystickButton(m_joystick, Constants.CW_DEPLOY_BUTTON);
     private static final JoystickButton button_wheelRetract = new JoystickButton(m_joystick, Constants.CW_RETRACT_BUTTON);
-    private static final JoystickButton button_wheelSpin = new JoystickButton(m_joystick, Constants.CW_SPINNER_BUTTON2);
+    private static final JoystickButton button_wheelSpinFwd = new JoystickButton(m_joystick, Constants.CW_SPINNER_FWD);
+    private static final JoystickButton button_wheelSpinRev = new JoystickButton(m_joystick, Constants.CW_SPINNER_REV);
     /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -89,7 +91,8 @@ public class RobotContainer
     button_wheelSpinner.whenPressed(new spinFunction(m_wheel));
     button_wheelDeploy.whenPressed(new spinDeploy(m_wheel));
     button_wheelRetract.whenPressed(new spinRetract(m_wheel));
-    button_wheelSpin.whileHeld(new spinColourWheel(m_wheel));
+    button_wheelSpinFwd.whileHeld(new spinColourWheel(m_wheel));
+    button_wheelSpinRev.whileHeld(new spinColourWheelRev(m_wheel));
   }
 
 
